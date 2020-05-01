@@ -1,7 +1,4 @@
-package com.course.system.domain;
-
-import org.springframework.stereotype.Component;
-
+package com.course.server.domain;
 
 public class Test {
     private String id;
