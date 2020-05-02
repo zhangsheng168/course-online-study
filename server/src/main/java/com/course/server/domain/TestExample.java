@@ -243,6 +243,76 @@ public class TestExample {
             addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
+
+        public Criteria andTestIsNull() {
+            addCriterion("test is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestIsNotNull() {
+            addCriterion("test is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestEqualTo(String value) {
+            addCriterion("test =", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestNotEqualTo(String value) {
+            addCriterion("test <>", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestGreaterThan(String value) {
+            addCriterion("test >", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestGreaterThanOrEqualTo(String value) {
+            addCriterion("test >=", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestLessThan(String value) {
+            addCriterion("test <", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestLessThanOrEqualTo(String value) {
+            addCriterion("test <=", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestLike(String value) {
+            addCriterion("test like", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestNotLike(String value) {
+            addCriterion("test not like", value, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestIn(List<String> values) {
+            addCriterion("test in", values, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestNotIn(List<String> values) {
+            addCriterion("test not in", values, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestBetween(String value1, String value2) {
+            addCriterion("test between", value1, value2, "test");
+            return (Criteria) this;
+        }
+
+        public Criteria andTestNotBetween(String value1, String value2) {
+            addCriterion("test not between", value1, value2, "test");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

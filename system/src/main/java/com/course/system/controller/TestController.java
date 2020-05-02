@@ -17,7 +17,7 @@ public class TestController {
 
     @RequestMapping("/test")
     public List<Test> test(){
-        System.out.println("----------1-------");
+        System.out.println("----------1111-------");
         return testService.list();
     }
 }

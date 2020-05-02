@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.course.server.domain.Test">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="test" jdbcType="VARCHAR" property="test" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name
+    id, name, test
   </sql>
   <select id="selectByExample" parameterType="com.course.server.domain.TestExample" resultMap="BaseResultMap">
     select
@@ -97,8 +98,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.course.server.domain.Test">
-    insert into test (id, name)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+    insert into test (id, name, test
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{test,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.course.server.domain.Test">
     insert into test
@@ -109,6 +112,9 @@
       <if test="name != null">
         name,
       </if>
+      <if test="test != null">
+        test,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -116,6 +122,9 @@
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -134,6 +143,9 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
+      <if test="record.test != null">
+        test = #{record.test,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -142,7 +154,8 @@
   <update id="updateByExample" parameterType="map">
     update test
     set id = #{record.id,jdbcType=VARCHAR},
-      name = #{record.name,jdbcType=VARCHAR}
+      name = #{record.name,jdbcType=VARCHAR},
+      test = #{record.test,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -153,17 +166,16 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
+      <if test="test != null">
+        test = #{test,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.course.server.domain.Test">
     update test
-    set name = #{name,jdbcType=VARCHAR}
+    set name = #{name,jdbcType=VARCHAR},
+      test = #{test,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
-
-    <select id="list" resultType="com.course.server.domain.Test">
-        select id,name from  test;
-    </select>
-
 </mapper>
