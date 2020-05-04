@@ -52,9 +52,10 @@
                                                     </label>
 
                                                     <button type="button"
-                                                            class="width-35 pull-right btn btn-sm btn-primary">
+                                                            class="width-35 pull-right btn btn-sm btn-primary"
+                                                    v-on:click="login()">
                                                         <i class="ace-icon fa fa-key"></i>
-                                                        <span class="bigger-110">Login</span>
+                                                        <span class="bigger-110">登录</span>
                                                     </button>
                                                 </div>
 
@@ -98,5 +99,10 @@
 
     export default {
         name: 'App',
+        methods:{
+            login(){
+                this.$router.push("/admin")
+            }
+        }
     }
 </script>
