@@ -184,7 +184,7 @@
                                     <ul class="dropdown-menu dropdown-navbar">
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
@@ -201,7 +201,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
@@ -218,7 +218,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
@@ -235,7 +235,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
@@ -252,7 +252,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -280,7 +280,7 @@
 
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+                                <img class="nav-user-photo" src="../../public/ace/assets/images/avatars/user.jpg" alt="Jason's Photo" />
                                 <span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -320,14 +320,10 @@
         </div>
 
         <div class="main-container ace-save-state" id="main-container">
-           <!-- <script type="text/javascript">
-                try{ace.settings.loadState('main-container')}catch(e){}
-            </script>-->
+
 
             <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
-                <!--<script type="text/javascript">
-                    try{ace.settings.loadState('sidebar')}catch(e){}
-                </script>-->
+
 
                 <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                     <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
@@ -363,7 +359,7 @@
                     <li class="">
                         <a href="index.html">
                             <i class="menu-icon fa fa-tachometer"></i>
-                            <span class="menu-text"> Dashboard </span>
+                            <span class="menu-text"> 欢迎 </span>
                         </a>
 
                         <b class="arrow"></b>
@@ -846,7 +842,7 @@
 
             <div class="main-content">
                 <div class="main-content-inner">
-                    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                    <!--<div class="breadcrumbs ace-save-state" id="breadcrumbs">
                         <ul class="breadcrumb">
                             <li>
                                 <i class="ace-icon fa fa-home home-icon"></i>
@@ -857,7 +853,7 @@
                                 <a href="#">Other Pages</a>
                             </li>
                             <li class="active">Blank Page</li>
-                        </ul><!-- /.breadcrumb -->
+                        </ul>&lt;!&ndash; /.breadcrumb &ndash;&gt;
 
                         <div class="nav-search" id="nav-search">
                             <form class="form-search">
@@ -866,11 +862,11 @@
 									<i class="ace-icon fa fa-search nav-search-icon"></i>
 								</span>
                             </form>
-                        </div><!-- /.nav-search -->
+                        </div>&lt;!&ndash; /.nav-search &ndash;&gt;
                     </div>
-
+-->
                     <div class="page-content">
-                        <div class="ace-settings-container" id="ace-settings-container">
+                        <!--<div class="ace-settings-container" id="ace-settings-container">
                             <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                                 <i class="ace-icon fa fa-cog bigger-130"></i>
                             </div>
@@ -916,7 +912,7 @@
                                             <b>.container</b>
                                         </label>
                                     </div>
-                                </div><!-- /.pull-left -->
+                                </div>&lt;!&ndash; /.pull-left &ndash;&gt;
 
                                 <div class="pull-left width-50">
                                     <div class="ace-settings-item">
@@ -933,9 +929,9 @@
                                         <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
                                         <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
                                     </div>
-                                </div><!-- /.pull-left -->
-                            </div><!-- /.ace-settings-box -->
-                        </div><!-- /.ace-settings-container -->
+                                </div>&lt;!&ndash; /.pull-left &ndash;&gt;
+                            </div>&lt;!&ndash; /.ace-settings-box &ndash;&gt;
+                        </div>--><!-- /.ace-settings-container -->
 
                         <div class="row">
                             <div class="col-xs-12">
