@@ -984,9 +984,13 @@
 
 
 <script>
-    $('body').removeClass('class', 'login-layout blur-login');
-    $('body').attr("class","no-skin");
+
     export default {
-        name: 'App',
+        name: 'admin',
+        mounted() {
+            $('body').removeClass('class', 'login-layout blur-login');
+            $('body').attr("class","no-skin");
+            //console.log("---admin---");
+        }
     }
 </script>
