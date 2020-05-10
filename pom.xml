@@ -12,7 +12,8 @@
         <module>gateway</module>
 		<!--公共服务server-->
 		<module>server</module>
-	</modules>
+        <module>business</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
