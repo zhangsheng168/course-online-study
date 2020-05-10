@@ -105,7 +105,8 @@
         },
         methods:{
             login(){
-                this.$router.push("/admin")
+                //点击"登录"跳转到welcome
+                this.$router.push("/welcome")
             }
         }
     }
