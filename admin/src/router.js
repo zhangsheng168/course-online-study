@@ -22,7 +22,7 @@ export default new Router({
         component: Admin,
         children:[{
             path:'welcome',
-            name:'welcom',
+            name:'welcome',
             component:Welcome
         },{
             path:'business/chapter',

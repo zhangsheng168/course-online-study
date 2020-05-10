@@ -11,7 +11,8 @@
         name: 'welcome',
         mounted() {
             //调用父组件的activeSidebar方法
-            this.$parent.activeSidebar("welcome-sidebar");
+            //sidebar菜单激活样式一
+            //this.$parent.activeSidebar("welcome-sidebar");
         },
         methods:{
 

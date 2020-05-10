@@ -981,7 +981,8 @@
         name: 'chapter',
         mounted() {
             //调用父组件的activeSidebar方法
-            this.$parent.activeSidebar("business-chapter-sidebar");
+            //sidebar菜单激活样式一
+            //this.$parent.activeSidebar("business-chapter-sidebar");
         },
         methods:{
 
