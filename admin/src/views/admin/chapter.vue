@@ -973,3 +973,18 @@
             </table>
 
 </template>
+
+
+<script>
+
+    export default {
+        name: 'chapter',
+        mounted() {
+            //调用父组件的activeSidebar方法
+            this.$parent.activeSidebar("business-chapter-sidebar");
+        },
+        methods:{
+
+        }
+    }
+</script>

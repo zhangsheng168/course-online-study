@@ -101,7 +101,7 @@
         mounted() {
             $('body').removeClass("class","no-skin");
             $('body').attr('class', 'login-layout blur-login');
-           // console.log("---login----");
+            // console.log("---login----");
         },
         methods:{
             login(){
