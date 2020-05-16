@@ -16,7 +16,7 @@
                     <a href="index.html" class="navbar-brand">
                         <small>
                             <i class="fa fa-leaf"></i>
-                            产教融合在线学习平台
+                            瓜瓜在线视频学习平台
                         </small>
                     </a>
                 </div>
@@ -447,7 +447,7 @@
                 <div class="footer-inner">
                     <div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">产教融合在线学习平台</span>
+							<span class="blue bolder">瓜瓜在线视频学习平台</span>
 							Application &copy; 2013-2014
 						</span>
 

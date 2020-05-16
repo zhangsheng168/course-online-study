@@ -1,10 +1,9 @@
 <template>
     <div>
         <p>
-            <a v-on:click="list()" class="btn btn-app btn-success">
-                <i class="ace-icon fa fa-refresh bigger-230"></i>
-                刷新
-            </a>
+            <button class="btn btn-success" v-on:click="add()"> 新增</button>
+            &nbsp;
+            <button class="btn btn-success" v-on:click="list()"> 刷新</button>
         </p>
 
         <pagination ref="pagination" v-bind:list="list" v-bind:itemCount="7"></pagination>
@@ -85,6 +84,40 @@
 
             </tbody>
         </table>
+        <!--模态框-->
+        <div class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!--模态框头部-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">表单</h4>
+                    </div>
+                    <!--模态框主体-->
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">名称</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control"  placeholder="名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">课程id</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control"  placeholder="课程id">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--模态框底部-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">保存</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
     </div>
 
 
@@ -121,6 +154,10 @@
                     _this.chapters=response.data.list;
                     _this.$refs.pagination.render(page,response.data.total);
                 })
+            },
+            add() {
+                let _this = this;
+                $(".modal").modal("show");
             }
         }
     }
