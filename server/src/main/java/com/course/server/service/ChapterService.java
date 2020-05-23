@@ -5,9 +5,11 @@ import com.course.server.domain.ChapterExample;
 import com.course.server.dto.ChapterDto;
 import com.course.server.dto.PageDto;
 import com.course.server.mapper.ChapterMapper;
+import com.course.server.util.UuidUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,7 +20,7 @@ import java.util.List;
 public class ChapterService {
 
     @Resource
-    private ChapterMapper ChapterMapper;
+    private ChapterMapper chapterMapper;
 
     public void list(PageDto pageDto){
         //分页（该插件往下遇到的第一个selectXX则生效）
@@ -27,7 +29,7 @@ public class ChapterService {
        /* chapterExample.createCriteria().andIdEqualTo("1");
         chapterExample.setOrderByClause("id desc");*/
         ChapterExample chapterExample = new ChapterExample();
-        List<Chapter> chapterList = ChapterMapper.selectByExample(chapterExample);
+        List<Chapter> chapterList = chapterMapper.selectByExample(chapterExample);
         PageInfo<Chapter> pageInfo = new PageInfo<>(chapterList);
         //设置总行数
         pageDto.setTotal(pageInfo.getTotal());
@@ -40,5 +42,13 @@ public class ChapterService {
             chapterDtoList.add(chapterDto);
         }
         pageDto.setList(chapterDtoList);
+    }
+
+    public void save(ChapterDto chapterDto){
+        Chapter chapter = new Chapter();
+        //设置短id
+        chapterDto.setId(UuidUtils.getShortUuid());
+        BeanUtils.copyProperties(chapterDto,chapter);
+        chapterMapper.insert(chapter);
     }
 }
