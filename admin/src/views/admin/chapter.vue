@@ -180,15 +180,43 @@
 
             del(id){
                 let _this = this;
-                _this.$ajax.delete('http://127.0.0.1:9000/business/admin/chapter/delete/'+id).then(
-                    (response)=>{
-                        console.log("删除大章",response);
-                        if(response.data.success){
-                            //刷新页面
-                            _this.list(1);
+                //显示sweet2弹出框
+                Swal.fire({
+                    title: '确认删除该记录?',
+                    text: "删除后,记录不可恢复!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消'
+                }).then((result) => {
+                    //发送请求删除
+                    _this.$ajax.delete('http://127.0.0.1:9000/business/admin/chapter/delete/'+id).then(
+                        (response)=>{
+                            console.log("删除大章",response);
+                            if(response.data.success){
+                                //弹出提示
+                                if (result.value) {
+                                    Swal.fire(
+                                        '删除成功!',
+                                        '删除成功.',
+                                        'success'
+                                    )
+                                }
+                                //刷新页面
+                                _this.list(1);
+                            }
                         }
-                    }
-                )
+                    )
+
+                })
+
+
+
+
+
+
             },
 
         }
