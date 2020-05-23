@@ -166,6 +166,8 @@
                         if(response.data.success){
                             $("#form-modal").modal("hide");
                             _this.list(1);
+                            //提示
+                            toast.success("保存成功!");
                         }
                     }
                 )
@@ -197,13 +199,7 @@
                             console.log("删除大章",response);
                             if(response.data.success){
                                 //弹出提示
-                                if (result.value) {
-                                    Swal.fire(
-                                        '删除成功!',
-                                        '删除成功.',
-                                        'success'
-                                    )
-                                }
+                               toast.success("删除成功!");
                                 //刷新页面
                                 _this.list(1);
                             }
