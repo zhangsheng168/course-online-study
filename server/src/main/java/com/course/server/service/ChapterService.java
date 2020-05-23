@@ -5,6 +5,7 @@ import com.course.server.domain.ChapterExample;
 import com.course.server.dto.ChapterDto;
 import com.course.server.dto.PageDto;
 import com.course.server.mapper.ChapterMapper;
+import com.course.server.util.CopyUtil;
 import com.course.server.util.UuidUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -35,6 +36,7 @@ public class ChapterService {
         pageDto.setTotal(pageInfo.getTotal());
 
         List<ChapterDto> chapterDtoList = new ArrayList<ChapterDto>();
+//        CopyUtil.copyList(chapterList,chapterDtoList);
         for (int i = 0,l=chapterList.size(); i<l ; i++) {
             Chapter chapter = chapterList.get(i);
             ChapterDto chapterDto = new ChapterDto();
