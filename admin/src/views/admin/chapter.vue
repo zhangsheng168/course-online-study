@@ -33,7 +33,7 @@
                             <i class="ace-icon fa fa-pencil bigger-120"></i>
                         </button>
 
-                        <button class="btn btn-xs btn-danger">
+                        <button v-on:click="del(chapter.id)" class="btn btn-xs btn-danger">
                             <i class="ace-icon fa fa-trash-o bigger-120"></i>
                         </button>
 
@@ -176,7 +176,20 @@
                 //解决编辑时，数据同步显示在列表中的显示问题
                 _this.chapter = $.extend({},chapter);
                 $("#form-modal").modal("show");
-            }
+            },
+
+            del(id){
+                let _this = this;
+                _this.$ajax.delete('http://127.0.0.1:9000/business/admin/chapter/delete/'+id).then(
+                    (response)=>{
+                        console.log("删除大章",response);
+                        if(response.data.success){
+                            //刷新页面
+                            _this.list(1);
+                        }
+                    }
+                )
+            },
 
         }
     }
