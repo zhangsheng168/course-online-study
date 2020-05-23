@@ -153,6 +153,8 @@
 
             add() {
                 let _this = this;
+                //不需要保留上一次编辑的数据，每次显示清空后的add表单
+                _this.chapter = {};
                 $("#form-modal").modal("show");
             },
 
@@ -171,7 +173,8 @@
 
             edit(chapter) {
                 let _this = this;
-                _this.chapter = chapter;
+                //解决编辑时，数据同步显示在列表中的显示问题
+                _this.chapter = $.extend({},chapter);
                 $("#form-modal").modal("show");
             }
 
