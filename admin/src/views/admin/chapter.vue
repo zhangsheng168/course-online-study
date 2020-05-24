@@ -167,7 +167,7 @@
                             $("#form-modal").modal("hide");
                             _this.list(1);
                             //提示
-                            toast.success("保存成功!");
+                            Toast.success("保存成功!");
                         }
                     }
                 )
@@ -182,8 +182,22 @@
 
             del(id){
                 let _this = this;
+                Confirm.show("删除大章后不可恢复,确认删除?",function () {
+                    _this.$ajax.delete('http://127.0.0.1:9000/business/admin/chapter/delete/'+id).then(
+                        (response)=>{
+                            console.log("删除大章",response);
+                            if(response.data.success){
+                                //弹出提示
+                                Toast.success("删除成功!");
+                                //刷新页面
+                                _this.list(1);
+                            }
+                        }
+                    )
+                })
+
                 //显示sweet2弹出框
-                Swal.fire({
+                /*Swal.fire({
                     title: '确认删除该记录?',
                     text: "删除后,记录不可恢复!",
                     icon: 'warning',
@@ -193,21 +207,25 @@
                     confirmButtonText: '确定',
                     cancelButtonText: '取消'
                 }).then((result) => {
-                    //发送请求删除
-                    _this.$ajax.delete('http://127.0.0.1:9000/business/admin/chapter/delete/'+id).then(
-                        (response)=>{
-                            console.log("删除大章",response);
-                            if(response.data.success){
-                                //弹出提示
-                               toast.success("删除成功!");
-                                //刷新页面
-                                _this.list(1);
+                    console.log(result);
+                    if(result.value){
+                        //发送请求删除
+                        _this.$ajax.delete('http://127.0.0.1:9000/business/admin/chapter/delete/'+id).then(
+                            (response)=>{
+                                console.log("删除大章",response);
+                                if(response.data.success){
+                                    //弹出提示
+                                    Toast.success("删除成功!");
+                                    //刷新页面
+                                    _this.list(1);
+                                }
                             }
-                        }
-                    )
+                        )
+                    }
+
 
                 })
-
+*/
 
 
 
