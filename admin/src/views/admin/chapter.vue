@@ -174,6 +174,9 @@
                             _this.list(1);
                             //提示
                             Toast.success("保存成功!");
+                        }else{
+                            //提示
+                            Toast.warning(response.data.message);
                         }
                     }
                 )
